@@ -1,4 +1,4 @@
-**Quote Scraper
+_ Quote Scraper
 
 Overview
 The Quote Scraper is a Streamlit-based web application that allows users to scrape motivational and success quotes from the QuoteFancy website based on a given topic or keyword. This tool helps gather quotes along with their associated categories and provides an option to download the results as a CSV file.
