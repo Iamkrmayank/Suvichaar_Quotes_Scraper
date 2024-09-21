@@ -1,15 +1,15 @@
-_ Quote Scraper
+# Quote Scraper
 
 Overview
 The Quote Scraper is a Streamlit-based web application that allows users to scrape motivational and success quotes from the QuoteFancy website based on a given topic or keyword. This tool helps gather quotes along with their associated categories and provides an option to download the results as a CSV file.
 
-#Features
+# Features
 Dynamic Keyword Input: Users can input any topic or keyword, and the app will convert it into a format suitable for the QuoteFancy URL.
 Automated Scraping: The scraper navigates through multiple pages (up to 10) to extract quotes and their respective categories.
 Data Visualization: Displays the scraped quotes and categories directly in the Streamlit app interface.
 CSV Download: Users can download the scraped quotes and categories as a CSV file with categories split into separate columns for easy analysis.
 
-#How It Works
+# How It Works
 User Input: The user enters a keyword related to the type of quotes they want to scrape (e.g., "Success Quotes", "Motivational Wallpapers").
 
 URL Formatting: The input keyword is converted into a URL-friendly format by replacing spaces with dashes. For example, "Success Quotes" becomes "Success-Quotes".
@@ -18,19 +18,19 @@ Web Scraping: The app sends requests to the QuoteFancy website for up to 10 page
 
 Data Display and Download: The scraped quotes and categories are displayed on the web interface. Users can download the data as a CSV file where each quote is followed by its categories in adjacent columns.
 
-#Usage Instructions
+# Usage Instructions
 Enter the desired keyword or topic in the text input box and click "Scrape Quotes".
 The app will fetch quotes and their categories from QuoteFancy based on the provided keyword.
 View the scraped quotes and categories directly on the page.
 Click the "Download CSV" button to download the results. The CSV file will have separate columns for the quote text and categories.
 
-#Technologies Used
+# Technologies Used
 Streamlit: For building the interactive web application.
 Requests: For making HTTP requests to the QuoteFancy website.
 BeautifulSoup: For parsing and extracting data from the HTML content.
 Pandas: For handling and structuring data before converting it to CSV.
 
-#Prerequisites
+# Prerequisites
 To run this application locally, you need to have Python installed along with the following packages:
 
 Streamlit
@@ -57,7 +57,8 @@ streamlit run app.py
 
 Open your browser and go to http://localhost:8501 to access the app.
 
-#Deployment
+# 
+Deployment
 The application can be easily deployed on Streamlit Cloud by connecting your GitHub repository and specifying the app.py file as the entry point.
 
 Example Use Case
