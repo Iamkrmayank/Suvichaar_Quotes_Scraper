@@ -48,7 +48,7 @@ if st.button("Scrape Quotes"):
         st.download_button(
             label="Download CSV",
             data=csv_data,
-            file_name="quotes_with_categories.csv",
+            file_name= f"quotes_with_{user_input}.csv",
             mime="text/csv",
         )
     else:
