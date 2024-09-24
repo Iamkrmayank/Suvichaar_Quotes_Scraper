@@ -1,8 +1,6 @@
 import streamlit as st
 import requests
 from bs4 import BeautifulSoup
-import csv
-from io import StringIO
 import pandas as pd
 
 st.title("Quote Scraper")
@@ -35,21 +33,24 @@ if st.button("Scrape Quotes"):
 
                     quotes.append([quote_text] + categories)
 
-        st.write("Quotes and Categories:")
-        for quote_row in quotes:
-            st.write(f"- **Quote:** {quote_row[0]}")
-            st.write(f"  **Categories:** {', '.join(quote_row[1:])}")
+        if quotes:  # Check if quotes list is not empty
+            st.write("Quotes and Categories:")
+            for quote_row in quotes:
+                st.write(f"- **Quote:** {quote_row[0]}")
+                st.write(f"  **Categories:** {', '.join(quote_row[1:])}")
 
-        max_categories = max(len(quote_row) - 1 for quote_row in quotes)
-        headers = ["Quote"] + [f"Category {i+1}" for i in range(max_categories)]
-        df = pd.DataFrame(quotes, columns=headers)
+            max_categories = max(len(quote_row) - 1 for quote_row in quotes)
+            headers = ["Quote"] + [f"Category {i+1}" for i in range(max_categories)]
+            df = pd.DataFrame(quotes, columns=headers)
 
-        csv_data = df.to_csv(index=False)
-        st.download_button(
-            label="Download CSV",
-            data=csv_data,
-            file_name= f"quotes_with_{user_input}.csv",
-            mime="text/csv",
-        )
+            csv_data = df.to_csv(index=False)
+            st.download_button(
+                label="Download CSV",
+                data=csv_data,
+                file_name=f"quotes_with_{user_input}.csv",
+                mime="text/csv",
+            )
+        else:
+            st.warning("No quotes found for the entered string. Please try a different search term.")
     else:
         st.warning("Please enter a string to scrape quotes.")
